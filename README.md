@@ -22,7 +22,9 @@ In any case here is the usage:
   cd ~/quicklisp/local-projects ;; or wherever you have it
   
   git clone git@github.com:nixz/XMLisp.git
+  
   git clone git@github.com:nixz/cl-xsd.git
+  
   git clone git@github.com:nixz/cl-3d-creator.git
 
 * In common lisp REPL
