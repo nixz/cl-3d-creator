@@ -1,0 +1,14 @@
+# A few notes
+
+* Cleaning up the xsd specicification file
+  The x3d specification is augmented a little. These notes are to
+  keep track of what changed so as to redo it with newer
+  specifications of other xsd schemas.
+** Delete all comments.
+** Delete '<>' in <![CDATA[....]]> => ![CDATA[...]]
+** replace <xs:sequence with xs:sequence-cl
+
+* How to get attributes
+  The places where attributed can be found in the schema are...
+(complexType (attributes ...
+(complexType (complexContent (extension (attributes ...
