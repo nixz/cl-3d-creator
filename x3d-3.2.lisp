@@ -1878,7 +1878,9 @@ X3D Schema version numbering:
 			<xs:documentation source="http://www.web3d.org/files/specifications/19775-1/V3.3/Part01/components/core.html#X3DNode"/>
 		</xs:annotation>
 		<xs:complexContent>
-    <xs:extension base="xml-serializer"/>
+      <xs:extension base="xml-serializer">
+        <xs:attribute name="DEF" type="SFString"/>
+      </xs:extension>
 		</xs:complexContent>
 		<xs:sequence-cl>
 			<xs:element ref="IS" minOccurs="0"/>
