@@ -1776,13 +1776,11 @@ X3D Schema version numbering:
 			<xs:documentation source="http://www.web3d.org/files/specifications/19775-1/V3.3/Part01/components/group.html#X3DGroupingNode"/>
 		</xs:annotation>
 		<xs:complexContent>
-			<xs:extension base="X3DChildNode">
+			<xs:extension base="X3DChildNode X3DBoundedObject">
 				<xs:sequence-cl minOccurs="0" maxOccurs="unbounded">
 					<xs:group ref="ChildContentModel" minOccurs="0" maxOccurs="unbounded"/>
 					<xs:group ref="ChildContentModelSceneGraphStructure" minOccurs="0" maxOccurs="unbounded"/>
 				</xs:sequence-cl>
-				<xs:attribute name="bboxCenter" type="SFVec3f" default="0 0 0"/>
-				<xs:attribute name="bboxSize" type="boundingBoxSizeType" default="-1 -1 -1"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -2047,10 +2045,8 @@ X3D Schema version numbering:
 			<xs:documentation source="http://www.web3d.org/files/specifications/19775-1/V3.3/Part01/components/shape.html#X3DShapeNode"/>
 		</xs:annotation>
 		<xs:complexContent>
-			<xs:extension base="X3DChildNode">
+			<xs:extension base="X3DChildNode X3DBoundedObject">
 				<xs:group ref="ShapeChildContentModel" minOccurs="0"/>
-				<xs:attribute name="bboxCenter" type="SFVec3f" default="0 0 0"/>
-				<xs:attribute name="bboxSize" type="boundingBoxSizeType" default="-1 -1 -1"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -5592,10 +5588,8 @@ X3D Schema version numbering:
 		</xs:annotation>
 		<xs:complexType>
 			<xs:complexContent>
-				<xs:extension base="X3DChildNode">
+				<xs:extension base="X3DChildNode X3DBoundedObject">
 					<xs:attribute name="load" type="SFBool" default="true"/>
-					<xs:attribute name="bboxCenter" type="SFVec3f" default="0 0 0"/>
-					<xs:attribute name="bboxSize" type="boundingBoxSizeType" default="-1 -1 -1"/>
 					<xs:attribute name="url" type="MFString"/>
 				</xs:extension>
 			</xs:complexContent>
@@ -7084,9 +7078,7 @@ X3D Schema version numbering:
 		</xs:annotation>
 		<xs:complexType>
 			<xs:complexContent>
-				<xs:extension base="X3DNetworkSensorNode">
-					<xs:attribute name="bboxCenter" type="SFVec3f" default="0 0 0"/>
-					<xs:attribute name="bboxSize" type="boundingBoxSizeType" default="-1 -1 -1"/>
+				<xs:extension base="X3DNetworkSensorNode X3DBoundedObject">
 					<xs:attribute name="whichGeometry" type="SFInt32" default="1"/>
 					<xs:attribute name="readInterval" type="SFTime" default="0.1"/>
 					<xs:attribute name="writeInterval" type="SFTime" default="1.0"/>
@@ -7121,9 +7113,7 @@ X3D Schema version numbering:
 		</xs:annotation>
 		<xs:complexType>
 			<xs:complexContent>
-				<xs:extension base="X3DNetworkSensorNode">
-					<xs:attribute name="bboxCenter" type="SFVec3f" default="0 0 0"/>
-					<xs:attribute name="bboxSize" type="boundingBoxSizeType" default="-1 -1 -1"/>
+				<xs:extension base="X3DNetworkSensorNode X3DBoundedObject">
 					<xs:attribute name="whichGeometry" type="SFInt32" default="1"/>
 					<xs:attribute name="readInterval" type="SFTime" default="0.1"/>
 					<xs:attribute name="writeInterval" type="SFTime" default="1.0"/>
@@ -7158,9 +7148,7 @@ X3D Schema version numbering:
 		</xs:annotation>
 		<xs:complexType>
 			<xs:complexContent>
-				<xs:extension base="X3DNetworkSensorNode">
-					<xs:attribute name="bboxCenter" type="SFVec3f" default="0 0 0"/>
-					<xs:attribute name="bboxSize" type="boundingBoxSizeType" default="-1 -1 -1"/>
+				<xs:extension base="X3DNetworkSensorNode X3DBoundedObject">
 					<xs:attribute name="whichGeometry" type="SFInt32" default="1"/>
 					<xs:attribute name="readInterval" type="SFTime" default="0.1"/>
 					<xs:attribute name="writeInterval" type="SFTime" default="1.0"/>
@@ -7667,7 +7655,7 @@ X3D Schema version numbering:
 		</xs:annotation>
 		<xs:complexType>
 			<xs:complexContent>
-				<xs:extension base="X3DHumanoidNode">
+				<xs:extension base="X3DHumanoidNode X3DBoundedObject">
 					<xs:sequence-cl minOccurs="0" maxOccurs="unbounded">
 						<xs:group ref="ChildContentModel" minOccurs="0" maxOccurs="unbounded"/>
 						<xs:choice minOccurs="0">
@@ -7684,8 +7672,6 @@ X3D Schema version numbering:
 					<xs:attribute name="translation" type="SFVec3f" default="0 0 0"/>
 					<xs:attribute name="info" type="MFString"/>
 					<xs:attribute name="version" type="SFString"/>
-					<xs:attribute name="bboxCenter" type="SFVec3f" default="0 0 0"/>
-					<xs:attribute name="bboxSize" type="boundingBoxSizeType" default="-1 -1 -1"/>
 				</xs:extension>
 			</xs:complexContent>
 		</xs:complexType>
@@ -7903,7 +7889,7 @@ X3D Schema version numbering:
 		</xs:annotation>
 		<xs:complexType>
 			<xs:complexContent>
-				<xs:extension base="X3DChildNode">
+				<xs:extension base="X3DChildNode X3DBoundedObject">
 					<xs:sequence-cl minOccurs="0" maxOccurs="unbounded">
 						<xs:element ref="NurbsPatchSurface"/>
 						<xs:element ref="NurbsSweptSurface"/>
@@ -7916,8 +7902,6 @@ X3D Schema version numbering:
 						</xs:element>
 					</xs:sequence-cl>
 					<xs:attribute name="tessellationScale" type="SFFloat" default="1.0"/>
-					<xs:attribute name="bboxCenter" type="SFVec3f" default="0 0 0"/>
-					<xs:attribute name="bboxSize" type="boundingBoxSizeType" default="-1 -1 -1"/>
 				</xs:extension>
 			</xs:complexContent>
 		</xs:complexType>
@@ -8046,7 +8030,7 @@ X3D Schema version numbering:
 		</xs:annotation>
 		<xs:complexType>
 			<xs:complexContent>
-				<xs:extension base="X3DProductStructureChildNode">
+				<xs:extension base="X3DProductStructureChildNode X3DGroupingNode">
 					<xs:choice minOccurs="0" maxOccurs="unbounded">
 						<xs:element ref="CADAssembly">
 							<xs:annotation>
@@ -8073,8 +8057,6 @@ X3D Schema version numbering:
 						<xs:element ref="ViewpointGroup"/>
 						<xs:element ref="WorldInfo"/>
 					</xs:choice>
-					<xs:attribute name="bboxCenter" type="SFVec3f" default="0 0 0"/>
-					<xs:attribute name="bboxSize" type="boundingBoxSizeType" default="-1 -1 -1"/>
 				</xs:extension>
 			</xs:complexContent>
 		</xs:complexType>
@@ -8088,7 +8070,7 @@ X3D Schema version numbering:
 		</xs:annotation>
 		<xs:complexType>
 			<xs:complexContent>
-				<xs:extension base="X3DProductStructureChildNode">
+				<xs:extension base="X3DProductStructureChildNode X3DBoundedObject">
 					<xs:choice minOccurs="0">
 						<xs:element ref="Shape"/>
 						<xs:element ref="LOD"/>
@@ -8099,8 +8081,6 @@ X3D Schema version numbering:
 							</xs:annotation>
 						</xs:element>
 					</xs:choice>
-					<xs:attribute name="bboxCenter" type="SFVec3f" default="0 0 0"/>
-					<xs:attribute name="bboxSize" type="boundingBoxSizeType" default="-1 -1 -1"/>
 				</xs:extension>
 			</xs:complexContent>
 		</xs:complexType>
@@ -8127,7 +8107,7 @@ X3D Schema version numbering:
 		</xs:annotation>
 		<xs:complexType>
 			<xs:complexContent>
-				<xs:extension base="X3DProductStructureChildNode">
+				<xs:extension base="X3DProductStructureChildNode X3DGroupingNode">
 					<xs:choice minOccurs="0" maxOccurs="unbounded">
 						<xs:element ref="CADFace"/>
 						<xs:element ref="ProtoInstance">
@@ -8141,8 +8121,6 @@ X3D Schema version numbering:
 					<xs:attribute name="scale" type="SFVec3f" default="1 1 1"/>
 					<xs:attribute name="scaleOrientation" type="SFRotation" default="0 0 1 0"/>
 					<xs:attribute name="translation" type="SFVec3f" default="0 0 0"/>
-					<xs:attribute name="bboxCenter" type="SFVec3f" default="0 0 0"/>
-					<xs:attribute name="bboxSize" type="boundingBoxSizeType" default="-1 -1 -1"/>
 				</xs:extension>
 			</xs:complexContent>
 		</xs:complexType>
@@ -8761,14 +8739,12 @@ X3D Schema version numbering:
 			<xs:documentation source="http://www.web3d.org/files/specifications/19775-1/V3.3/Part01/components/rigid_physics.html#X3DNBodyCollidableNode"/>
 		</xs:annotation>
 		<xs:complexContent>
-			<xs:extension base="X3DChildNode">
+			<xs:extension base="X3DChildNode X3DBoundedObject">
 				<xs:annotation>
 					<xs:appinfo>
 						<xs:attribute name="otherInterfaces" type="xs:string" fixed="X3DBoundedObject"/>
 					</xs:appinfo>
 				</xs:annotation>
-				<xs:attribute name="bboxCenter" type="SFVec3f" default="0 0 0"/>
-				<xs:attribute name="bboxSize" type="boundingBoxSizeType" default="-1 -1 -1"/>
 				<xs:attribute name="enabled" type="SFBool" default="true"/>
 				<xs:attribute name="rotation" type="SFRotation" default="0 0 1 0"/>
 				<xs:attribute name="translation" type="SFVec3f" default="0 0 0"/>
@@ -8780,14 +8756,12 @@ X3D Schema version numbering:
 			<xs:documentation source="http://www.web3d.org/files/specifications/19775-1/V3.3/Part01/components/rigid_physics.html#X3DNBodyCollisionSpaceNode"/>
 		</xs:annotation>
 		<xs:complexContent>
-			<xs:extension base="X3DNode">
+			<xs:extension base="X3DNode X3DBoundedObject">
 				<xs:annotation>
 					<xs:appinfo>
 						<xs:attribute name="otherInterfaces" type="xs:string" fixed="X3DBoundedObject"/>
 					</xs:appinfo>
 				</xs:annotation>
-				<xs:attribute name="bboxCenter" type="SFVec3f" default="0 0 0"/>
-				<xs:attribute name="bboxSize" type="boundingBoxSizeType" default="-1 -1 -1"/>
 				<xs:attribute name="enabled" type="SFBool" default="true"/>
 				<xs:attribute name="containerField" type="xs:NMTOKEN" default="children"/>
 			</xs:extension>
