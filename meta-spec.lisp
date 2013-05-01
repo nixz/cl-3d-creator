@@ -37,7 +37,29 @@
 ;; Code to handle auto creation of project
 
 (defparameter *X3D-DOCUMENTATION-SPEC*
-  `((:name core
+  `(
+    (:name concepts
+     :abstract (SceneGraphStructureNodeType
+                X3DPrototype
+                WildcardNodeType)
+     :node (component
+            EXPORT
+            IMPORT
+            IS
+            connect
+            field
+            fieldValue
+            head
+            ExternProtoDeclare
+            ProtoDeclare
+            ProtoInterface
+            ProtoBody
+            ProtoInstance
+            Route
+            ;; Scene (hold this off for now)
+            X3D
+            ))
+    (:name core
      :abstract  (X3DBindableNode
                  X3DChildNode
                  X3DInfoNode
