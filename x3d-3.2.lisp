@@ -2225,6 +2225,10 @@ X3D Schema version numbering:
 			<xs:appinfo>SceneGraphStructureNodeType is a marker interface that identifies nonrenderable nodes relating to scene graph structure.  SceneGraphStructureNodeType extends from Base rather than X3DNode since DEF/USE not appropriate for declarations.</xs:appinfo>
 			<xs:documentation source="http://www.web3d.org/files/specifications/19775-1/V3.3/Part01/concepts.html#scenegraph"/>
 		</xs:annotation>
+		<xs:complexContent>
+      <xs:extension base="xml-serializer">
+      </xs:extension>
+		</xs:complexContent>
 	</xs:complexType>
 	<xs:complexType name="WildcardNodeType" abstract="true" mixed="false">
 		<xs:annotation>
